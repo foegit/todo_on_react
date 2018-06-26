@@ -20,7 +20,13 @@ class App extends Component{
         <div className="todo-list">
           {this.props.todos.map(task=>{
             return (
-              <TodoItem key={task.id} title={task.title} completed={task.completed}/>
+              <TodoItem
+                id={task.id}
+                key={task.id}
+                title={task.title}
+                completed={task.completed}
+                onStatusChange={this.props.statusChange}
+                onDelete={this.props.delete}/>
             );})}
         </div>
       </main>
@@ -29,10 +35,23 @@ class App extends Component{
   }
 }
 function mapStateToProps(state){
-  console.log(state);
   return{
     todos: state
   }
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch){
+  return{
+
+    statusChange: (id) => dispatch({
+      type: 'TASK_STATUS_CHANGE',
+      taskId: id
+    }),
+    delete: (id) => dispatch({
+      type: 'TASK_DELETE',
+      taskId: id
+    }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
