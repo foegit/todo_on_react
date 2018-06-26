@@ -1,44 +1,32 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import TodoItem from './TodoItem';
+import { connect } from 'react-redux';
+
 
 class App extends Component{
   render(){
+
     return(
     <div>
-      <header>
-        <h1>TODO LIST</h1>
-      <ul class='stat'>
-        <li><span>1</span> complete</li>
-        <li><span>2</span> remain</li>
-        <li><span>3</span> total</li>
-      </ul>
-      </header>
+      <Header />
       <main>
-      <div className="todo">
-        <div className="list">
-          <div className="todo-item notcomplete">
-            <button>Check</button>
-            <span class='todo-text'>Learn react</span>
-            <button>Edit</button>
-            <button>Del</button>
-          </div>
-          <div className="todo-item complete">
-            <button>Check</button>
-            <span class='todo-text'>Learn redux</span>
-            <button>Edit</button>
-            <button>Del</button>
-          </div>
-          <div className="todo-item notcomplete">
-            <button>Check</button>
-            <span class='todo-text'>Learn react-router</span>
-            <button>Edit</button>
-            <button>Del</button>
-          </div>
+        <div className="todo-list">
+          {this.props.todos.map(task=>{
+            return (
+              <TodoItem key={task.id} title={task.title} completed={task.completed}/>
+            );})}
         </div>
-      </div>
       </main>
     </div>
-  )
+  );
+  }
+}
+function mapStateToProps(state){
+  console.log(state);
+  return{
+    todos: state
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);
