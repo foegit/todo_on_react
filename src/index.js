@@ -4,6 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import './css/main.css'
+
+
 import App from './components/App'
 
 const innitialData = [

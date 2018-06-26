@@ -7,9 +7,15 @@ import { connect } from 'react-redux';
 class App extends Component{
   render(){
 
+    const totalTask = this.props.todos.length;
+    const completeTask = this.props.todos.filter(task=>task.completed).length;
+    const remainTask = totalTask - completeTask;
     return(
-    <div>
-      <Header />
+    <div className='App'>
+      <Header
+        totalTaskNum={totalTask}
+        completeTaskNum={completeTask}
+        remainTaskNum={remainTask}/>
       <main>
         <div className="todo-list">
           {this.props.todos.map(task=>{
