@@ -1,33 +1,5 @@
 
-body, html{
-  padding: 0;
-  margin: 0;
-  background-color: #ass;
-  color: #444;
-  width: 100%;
-  font-family: sans-serif;
-  height: 100%;
-  background-color: #7a9;
-}
 
-header{
-  width: 100%;
-  background-color: #444;
-  color: #aaa;
-  border-bottom: 5px solid #77f;
-  margin: auto;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main{
-  width: 100%;
-  display: block;
-  margin: auto;
-
-}
 #root{
   width: 80%;
   max-width: 900px;
@@ -39,8 +11,12 @@ main{
   width: 90%;
   margin: auto;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+
 }
 .todo-item{
+
   display: flex;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -110,4 +86,44 @@ input[type='checkbox']{
 }
 .todo-text{
   flex-grow: 1;
+}
+
+
+.addTaskPanel{
+  width: 100%;
+  max-width: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.addTaskBtn{
+  background-color: inherit;
+  border-radius: 20px;
+  display: flex;
+  align-self: flex-start;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #393;
+  border: none;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+
+.addTaskBtn:hover {
+  color: #4a4;
+  transform: rotate(90deg);
+}
+.addTaskArea{
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 40px;
+  margin: 10px;
+
 }

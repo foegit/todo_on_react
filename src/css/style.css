@@ -1,0 +1,140 @@
+body, html {
+  padding: 0;
+  margin: 0;
+  background-color: #aaa;
+  color: #444;
+  width: 100%;
+  font-family: sans-serif;
+  height: 100%;
+  background-color: #7a9;
+  box-sizing: border-box;
+}
+body #root, html #root {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  min-height: 100%;
+  background-color: #444;
+}
+body #root main, html #root main {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+body #root main .todo-container, html #root main .todo-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+body #root main .todo-container .todo-item, html #root main .todo-container .todo-item {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 4px 0 4px 0;
+  background-color: #eee;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+  overflow: hidden;
+  height: 50px;
+}
+body #root main .todo-container .todo-item.completed, html #root main .todo-container .todo-item.completed {
+  border-left: 5px solid #6d7;
+}
+body #root main .todo-container .todo-item.notcomplete, html #root main .todo-container .todo-item.notcomplete {
+  border-left: 5px solid #d67;
+}
+body #root main .todo-container .todo-item *, html #root main .todo-container .todo-item * {
+  display: block;
+  margin: 5px;
+}
+body #root main .todo-container .todo-item:hover, html #root main .todo-container .todo-item:hover {
+  height: 60px;
+}
+body #root main .todo-container .todo-item button, html #root main .todo-container .todo-item button {
+  background-color: inherit;
+  border: none;
+  outline-style: none;
+  font-size: 15px;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #root main .todo-container .todo-item button:hover, html #root main .todo-container .todo-item button:hover {
+  background-color: #ddd;
+}
+body #root main .todo-container .todo-item button *, html #root main .todo-container .todo-item button * {
+  display: block;
+  width: 100%;
+}
+body #root main .todo-container .todo-item .todo-text, html #root main .todo-container .todo-item .todo-text {
+  flex-grow: 1;
+}
+body #root main .todo-container .addTaskPanel, html #root main .todo-container .addTaskPanel {
+  width: 100%;
+  max-width: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+body #root main .todo-container .addTaskPanel .addTaskBtn, html #root main .todo-container .addTaskPanel .addTaskBtn {
+  background-color: inherit;
+  border-radius: 20px;
+  display: flex;
+  align-self: flex-start;
+  margin: 10px 5px 10px 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #393;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+body #root main .todo-container .addTaskPanel .addTaskBtn:hover, html #root main .todo-container .addTaskPanel .addTaskBtn:hover {
+  background-color: #444;
+  color: #4a4;
+  transform: rotate(90deg);
+}
+body #root main .todo-container .addTaskPanel .addTaskArea, html #root main .todo-container .addTaskPanel .addTaskArea {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 40px;
+  margin: 10px;
+}
+body #root header, html #root header {
+  width: 100%;
+  background-color: #444;
+  color: #aaa;
+  border-bottom: 5px solid #77f;
+  margin: auto;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #root header .stat, html #root header .stat {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  padding-left: 10px;
+  color: #ddd;
+  font-weight: bold;
+  border-left: 2px solid #933;
+}
+body #root header .stat span, html #root header .stat span {
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=src/css/style.css.map */

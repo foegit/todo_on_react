@@ -1,0 +1,144 @@
+body, html{
+  padding: 0;
+  margin: 0;
+  background-color: #aaa;
+  color: #444;
+  width: 100%;
+  font-family: sans-serif;
+  height: 100%;
+  background-color: #7a9;
+  box-sizing: border-box;
+  #root{
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    min-height: 100%;
+    background-color: #444;
+    main{
+      width: 100%;
+      display: block;
+      margin: auto;
+      .todo-container{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        .todo-item{
+          display: flex;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          margin: 4px 0 4px 0;
+          background-color: #eee;
+          justify-content: space-around;
+          align-items: center;
+          transition: 0.5s;
+          overflow: hidden;
+          height: 50px;
+          &.completed{
+            border-left: 5px solid #6d7;
+          }
+          &.notcomplete{
+            border-left: 5px solid #d67;
+          }
+          *{
+            display: block;
+            margin: 5px;
+          }
+          &:hover{
+
+            height: 60px;
+
+          }
+          button{
+            background-color: inherit;
+            border: none;
+            outline-style: none;
+            font-size: 15px;
+            height: 25px;
+            width: 25px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                background-color: #ddd;
+            }
+          }
+          button{
+            *{
+            display: block;
+            width: 100%;}
+          }
+          .todo-text{
+            flex-grow: 1;
+          }
+        }
+        .addTaskPanel{
+          width: 100%;
+          max-width: 100%;
+          background-color: #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-grow: 1;
+          .addTaskBtn{
+            background-color: inherit;
+            border-radius: 20px;
+            display: flex;
+            align-self: flex-start;
+            margin: 10px 5px 10px 5px;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #393;
+            border: none;
+            outline: none;
+            width: 40px;
+            height: 40px;
+            transition: 0.4s;
+            &:hover {
+              background-color: #444;
+              color: #4a4;
+              transform: rotate(90deg);
+            }
+          }
+
+          .addTaskArea{
+            display: block;
+            flex-grow: 1;
+            flex-shrink: 1;
+            min-height: 40px;
+            margin: 10px;
+          }
+        }
+      }
+
+    }
+    header{
+      width: 100%;
+      background-color: #444;
+      color: #aaa;
+      border-bottom: 5px solid #77f;
+      margin: auto;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .stat{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 10px;
+        padding-left: 10px;
+        color: #ddd;
+        font-weight: bold;
+        border-left: 2px solid #933;
+        span{
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+}

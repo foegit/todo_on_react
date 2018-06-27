@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import TodoItem from './TodoItem';
 import { connect } from 'react-redux';
 
+import Header from './Header';
+import TodoItem from './TodoItem';
+import AddTask from './AddTask'
 
 class App extends Component{
   render(){
-
     const totalTask = this.props.todos.length;
     const completeTask = this.props.todos.filter(task=>task.completed).length;
     const remainTask = totalTask - completeTask;
+    const { todos, onDeleteTask, onAddTask, onStatusChangeTask } = this.props;
+
     return(
     <div className='App'>
       <Header
@@ -17,17 +19,20 @@ class App extends Component{
         completeTaskNum={completeTask}
         remainTaskNum={remainTask}/>
       <main>
-        <div className="todo-list">
-          {this.props.todos.map(task=>{
+        <div className="todo-container">
+          {todos.map(task=>{
             return (
               <TodoItem
                 id={task.id}
                 key={task.id}
                 title={task.title}
                 completed={task.completed}
-                onStatusChange={this.props.statusChange}
-                onDelete={this.props.delete}/>
+                onStatusChange={onStatusChangeTask}
+                onDelete={onDeleteTask}/>
             );})}
+            <div className="addPanel">
+                <AddTask onAddTask={onAddTask}/>
+          </div>
         </div>
       </main>
     </div>
@@ -42,15 +47,22 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return{
-
-    statusChange: (id) => dispatch({
+    onStatusChangeTask: (id) => dispatch(
+    {
       type: 'TASK_STATUS_CHANGE',
       taskId: id
     }),
-    delete: (id) => dispatch({
+    onDeleteTask: (id) => dispatch(
+    {
       type: 'TASK_DELETE',
       taskId: id
     }),
+    onAddTask: (text) => dispatch(
+      {
+        type: 'ADD_TASK',
+        payload: text
+      }
+    )
   }
 }
 
